@@ -20,15 +20,15 @@
     <el-tab-pane label="评价管理" name="second">
       <div class="z-floor-title">评价历史记录</div>
       <div class="block">
-        <div v-for="(item2,index2) in listData">
+        <div v-for="(item2,index2) in this.listData">
           <div class="appraise">
             <div class="appraise-title">
               用户名：
-              <span>{{item2.name}}</span>
+              <span>{{username}}</span>
             </div>
             <div class="appraise-title">
               发表时间
-              <span>{{timer1[index2]}}</span>
+              <span>{{item2.currentTime}}</span>
             </div>
 
             <div class="appraise-body">
@@ -61,36 +61,36 @@ export default {
       rules: {
         name: [{ validator: validateDate }]
       },
-      timer: "",
+      timer:"",
       timer1: [],
       content: "",
       currentTime: new Date(), //获取当前时间
-      name: "linxin",
-      listData: [{ content: "", name: "" }],
+      listData: [{ content: ""}],
       show: false,
       mount: 1,
       activeName: "first"
     };
   },
+  computed: {
+    username() {
+      let username = sessionStorage.getItem("ms_username");
+      return username ? username : this.name;
+    }
+  },
   methods: {
     handleClose(done) {
-      // const self = this;
-
-      // self.$http
-      //   .post("/api/user/login", JSON.stringify(self.ruleForm))
-      //   .then(response => {
-      //     console.log(response);
-      //     self.$router.push("/register-success");
-        // });
 
       this.timer1.push(this.currentTime);
       var obj = { content: "" };
       obj.content = this.content;
       obj.name = this.name;
       obj.currentTime = this.currentTime;
+
+      console.log(this.currentTime,this.listData)
+      //this.currentTime 当前时间
       this.listData.push(obj);
-      localStorage.setItem("article", JSON.stringify(this.listData));
-      localStorage.setItem("time-select", this.timer1.join());
+      sessionStorage.setItem("article", JSON.stringify(this.listData));
+      sessionStorage.setItem("time-select", this.timer1.join());
       this.$confirm("感谢提交,您的鼓励会让我们做得更好")
         .then(_ => {
           done();
@@ -98,8 +98,9 @@ export default {
         .catch(_ => {});
     },
     list: function() {
-      var obj = localStorage.getItem("article");
-      let obj2 = localStorage.getItem("time-select");
+     
+      var obj = sessionStorage.getItem("article");
+      let obj2 = sessionStorage.getItem("time-select");
       if (obj) {
         this.listData = JSON.parse(obj);
       }
@@ -109,17 +110,11 @@ export default {
     },
     del(index2) {
       this.listData.splice(index2, 1);
-      localStorage.setItem("article", JSON.stringify(this.listData));
+      sessionStorage.setItem("article", JSON.stringify(this.listData));
     }
   },
   mounted() {
     this.list();
-  },
-  computed: {
-    username() {
-      let username = sessionStorage.getItem("ms_username");
-      return username ? username : this.name;
-    }
   },
   created() {
     this.timer = setInterval(() => {
@@ -139,12 +134,13 @@ export default {
   },
   beforeDestroy() {
     if (this.timer) {
+
       clearInterval(this.timer);
     }
   }
 };
 </script>
-<style>
+<style scoped>
 .z-floor-title {
   width: 400px;
   background: #edefed;

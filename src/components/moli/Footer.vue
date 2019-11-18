@@ -299,15 +299,22 @@ export default {
         { text: "有家民宿" }
       ],
       rolls: [
-        { text: "第一条" },
-        { text: "第二条" },
-        { text: "第三条" },
-        { text: "第四条" },
-        {text:"第五条"},
-        {text:"第五条"},
-        {text:"第五条"},
-        {text:"第五条"},
-        {text:"第五条"},
+        { text: "鼓浪屿·精致香墅大床-三丘田·日光岩-37分钟前被用户*****7652预定" },
+        { text: "22R 粉红公主小窝 南湖湖景小屋38分钟前被用户*****1326预定" },
+        { text: "自由空间-古北水镇曲美家私温馨一居41分钟前被用户*****1965预定" },
+        { text: "三亚旅家凤凰水城南岸公寓豪华园景一房一卫41分钟前被用户*****1868预定" },
+        {text:"豪华多功能家庭房1小时6分钟前被用户*****1633预定"},
+        {text:"【你好·莫兰迪】近大东海/静谧丛林一居室1小时13分钟前被用户*****8690预定"},
+        {text:"寓尚【南山公寓】15北大街/高铁站1小时23分钟前被用户*****1956预定"},
+        {text:"解放碑洪崖洞阳光双床房1小时28分钟前被用户*****5551预定"},
+        {text:"鼓浪屿·精致香墅大床-三丘田·日光岩-37分钟前被用户*****7652预定"},
+        {text:"22R 粉红公主小窝 南湖湖景小屋38分钟前被用户*****1326预定"},
+        {text:"自由空间-古北水镇曲美家私温馨一居41分钟前被用户*****1965预定"},
+        {text:"三亚旅家凤凰水城南岸公寓豪华园景一房一卫41分钟前被用户*****1868预定"},
+        {text:"豪华多功能家庭房1小时6分钟前被用户*****1633预定"},
+     
+
+
       ],
       activeName2: "first"
     };
@@ -453,7 +460,7 @@ wbr .about {
   width: 1050px;
   height: 175px;
   margin: 0px auto;
-  background: #24a;
+  /* background: #24a; */
   position: relative;
 }
 
@@ -482,63 +489,91 @@ wbr .about {
   bottom: 0px;
 }
 .new {
-  width: 60px;
+  width: 80px;
   height: 40px;
+  color: #c1c1c1;
 }
 
 .roll {
   width: 1200px;
   height: 40px;
   overflow: hidden;
-  background: greenyellow;
+  /* background: greenyellow; */
 }
 
 .block {
-  width: 1000px;
+  width: 3000px;
   height: 40px;
-  display: inline-block;
+  /* display: inline-block; */
   float: left;
-  animation: myli 12s linear infinite normal;
+  animation: myli 30s linear infinite normal;
   position: relative;
 }
 
 .block li {
+  width: 250px;
   display: inline-block;
   list-style: none;
-  width: 100px;
-  color: #de3927;
+  color: #c1c1c1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .lunbo {
   position: relative;
   width: 2000px;
   height: 40px;
-  /* animation: myli 12s linear infinite normal;
-   display: inline-block; */
 }
 .lunbo ul{
  display: inline-block;
 
 }
 @keyframes myli {
-  0% {
+  0%,10%{
     left: 0px;
   }
   10%,
+  15% {
+    left: -200px;
+  }
+  15%,
   25% {
-    left: -250px;
+    left: -400px;
   }
-  30%,
-  50% {
-    left: -500px;
+  25%,
+  35% {
+    left: -600px;
   }
-  60%,
-  70% {
-    left: -750px;
+  35%,
+  45% {
+    left: -800px;
   }
-  75%,
-  100% {
+  45%,
+  55% {
     left: -1000px;
   }
+  55%,
+  65% {
+    left: -1200px;
+  }
+  65%,
+  75% {
+    left: -1400px;
+  }
+   75%,
+   85% {
+    left: -1600px;
+  }
+   85%,
+   95% {
+    left: -1800px;
+  }
+   95%,
+   100% {
+    left: -2000px;
+  }
+  
+  
 }
 
 .thr-box {

@@ -73,7 +73,7 @@
 	
 </script>
 
-<style>
+<style scoped>
 	.userContent {
 		width: 400px;
 		margin: 0 auto;

@@ -1,0 +1,37 @@
+{
+  "id": "1494591",
+  "name": "hotel",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1120975",
+      "name": "人",
+      "font_class": "ren111",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "1127398",
+      "name": "左箭头",
+      "font_class": "leftarrow",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "1127400",
+      "name": "右箭头",
+      "font_class": "rightarrow",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "1629916",
+      "name": "爱心",
+      "font_class": "icon-test",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    }
+  ]
+}

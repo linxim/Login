@@ -1,0 +1,33 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1573720631488'); /* IE9 */
+  src: url('iconfont.eot?t=1573720631488#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAQ0AAsAAAAACQQAAAPlAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDKgqFHIQ9ATYCJAMUCwwABCAFhG0HVRvOBxEVnBfJvsC2YQ+AYmEl284Nrg/GWwL2TCCBFygAAAAAIHgeber7ks656EwwFZE2OyWYOgLB2mYqTQQ8uVfizXb+//t53z+jURYPqLGqLSJp32A63DAacCZNV1QBoyJMp8ROP33Hpd0p+bCMX9Zgs3OqNW8XSAQJBpRZdt8HwA/3M10U7g8on23tEpkUlZRA4wHFHUetEo+O7A7kBP2GscuLvA0BLNVpivTtb3SCi0H/SACZMzMTAzdhxVQggmsIFOw0yBYcXLVW3QU2e78vX2ktLigcjb5yZIUqCT39On5jvaSqP9Wxy4zh3ADbBxpoChiQWYXeLDpINEVj5VxDR8A1nlPg1/Xr+42rqhChjnwrCReLhf/wFBoDEkDXBqG+J04a8OtYLAj4dVlQ4NdnQYPfWP5QtA563wIecAKkE8AntdoIKWkW1E2JhPVsPJXrbs/dU//4oo7Hx6fOetbpQN1qsnPn+t2ZwQtEWl3NsCRBlqWLUB61q2rVPW8x73wfXP+j5/y6qXb74vgpzKcDTzN2JZ3vFH1nyvXJMAGqgKJpXWlKxvObxN9Rk4gkI9hEB8cx5/OCXJUsbhVtx7r04XkVP4XVB15rWvvp87nttAU2eXHdjwUUdSF/5+Tp/3GmFSy4CgbSkCPxl35vB7ZbmssN2u1NUwrhOQO9f+qHN6brZ+k7JaiCvkydap/Qb2pAiVQSmAI19ZJXpmZNA5BXNWsqparQ/qc3CdYaiNy0VgmfanH/6smNb9Zfr90Vn1j04cNkfvsLnJ0ylprGoyT7clHpN5tFj5MUezseeGno06jSebm+e/SiZFeuzCqNlNtUVlqhAbOkSpoki0XFK9oeGyqpCmSMHW7F7e0bIkcUrJKhubQRWUyxF31Vcppy74OBAJRa79PNAfRFVfhT/oaepV1FIor/rmcAePW3jdhrKrVBL4HXLWss+y9kDQeMotBtjpF6LalU7NAZDfdZ/hso/ocMxHk/jD7VuBQEl1QEijKqgcalLtrgm4KDR1sI4NIDLE0YsN8jwSI0YsqBxqwEIEQ5CoowF0AT5R7a4N+BQ5rvECAqGizjhXqiR31RNMu1IjOUlL+oKWRk02FLv/yA6tZnGld41AvUNWFKwjid3mOEDrHG3avUjIlVBtqB+9D3QpNKi8LC2mxaRREXfVNYyOAt6aPIDCXlL2oKGdmZbsvMzx9Q3fpMK/rKwheoa+anJIwboPfasVHfpXzF3avUjIlVBtoBN3ojITQVv9aisLDuEJtWERrFTbXh9PrhHs8AFn21I0q0GHEkQGARxgTsWvRgy1TlsdSmqkPN4lLyA4MzzwMAAAA=') format('woff2'),
+  url('iconfont.woff?t=1573720631488') format('woff'),
+  url('iconfont.ttf?t=1573720631488') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1573720631488#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ren111:before {
+  content: "\e623";
+}
+
+.icon-leftarrow:before {
+  content: "\e624";
+}
+
+.icon-rightarrow:before {
+  content: "\e626";
+}
+
+.icon-icon-test:before {
+  content: "\e62a";
+}
+

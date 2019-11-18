@@ -139,6 +139,9 @@ router.post('/modifyPassword', (req, res) => {
         }
     })
 });
+router.get('/deleteOrder',(req,res)=>{
+    
+})
 
 router.get('/getRoom', (req, res) => {
     var sql_name = $sql.room.select_name;
@@ -160,4 +163,86 @@ router.get('/getRoom', (req, res) => {
         }
     })
 });
+router.get('/getHome1',(req,res)=>{
+    var sql_name=$sql.home1.select_name;
+    var params=req.body;
+    if(params.name){
+        sql_name+="where username ='"+params.name+"'";
+    }
+    conn.query(sql_name,params.name,function(err,result){
+        if(err){
+            console.log(err);
+        }
+        if(result[0]==undefined){
+            res.send('-1')
+        }else{
+            jsonWrite(res,result);
+        }
+    })
+})
+router.get('/getHome2',(req,res)=>{
+    var sql_name=$sql.home2.select_name;
+    var params=req.body;
+    if(params.name){
+        sql_name+="where username ='"+params.name+"'";
+    }
+    conn.query(sql_name,params.name,function(err,result){
+        if(err){
+            console.log(err);
+        }
+        if(result[0]==undefined){
+            res.send('-1')
+        }else{
+            jsonWrite(res,result);
+        }
+    })
+})
+router.get('/getSanya',(req,res)=>{
+    var sql_name=$sql.sanya.select_name;
+    var params=req.body;
+    if(params.name){
+        sql_name+="where username ='"+params.name+"'";
+    }
+    conn.query(sql_name,params.name,function(err,result){
+        if(err){
+            console.log(err);
+        }
+        if(result[0]==undefined){
+            res.send('-1')
+        }else{
+            jsonWrite(res,result);
+        }
+    })
+})
+router.get('/getAnt',(req,res)=>{
+    var sql_name=$sql.ant.select_name;
+    var params=req.body;
+    if(params.name){
+        sql_name+="where username ='"+params.name+"'";
+    }
+    conn.query(sql_name,params.name,function(err,result){
+        if(err){
+            console.log(err);
+        }
+        if(result[0]==undefined){
+            res.send('-1')
+        }else{
+            jsonWrite(res,result);
+        }
+    })
+})
+router.get('/comment',(req,res)=>{
+    var sql = $sql.comment.add;
+    var params = req.body;
+    console.log(params);
+    console.log(params.birth);
+    conn.query(sql, [params.content, params.date], function(err, result) {
+        if (err) {
+            console.log(err);
+        }
+        if (result) {
+            jsonWrite(res, result);
+        }
+    })  
+})
 module.exports = router;

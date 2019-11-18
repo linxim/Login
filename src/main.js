@@ -3,6 +3,7 @@ import App from './App';
 import router from './router';
 import axios from 'axios';
 import ElementUI from 'element-ui';
+import store from 'vuex'
 import 'element-ui/lib/theme-default/index.css';    // 默认主题
 // import $ from 'jquery'
 import 'bootstrap3/dist/css/bootstrap.css';
@@ -21,5 +22,6 @@ Vue.prototype.$http = window.axios
 // Vue.use(axios);
 new Vue({
     router,
+    store,
     render: h => h(App)
 }).$mount('#app');

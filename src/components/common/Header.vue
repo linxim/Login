@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="z_header">
     <!-- <div class="logo">  </div> -->
     <div class="logo">
       <i class="web-font">忆家客栈</i>
@@ -22,7 +22,7 @@
 export default {
   data() {
     return {
-      name: "linxin"
+      name: "linxi"
     };
   },
   computed: {
@@ -36,7 +36,8 @@ export default {
       if (command == "loginout") {
         sessionStorage.removeItem("ms_username");
         sessionStorage.removeItem("ms_userId");
-        this.$router.push("/login");
+        this.$router.push("/index");
+        sessionStorage.removeItem("ms_show");
       } else if (command == "userCenter") {
         this.$router.push("/userCenter");
       }
@@ -44,8 +45,10 @@ export default {
   }
 };
 </script>
+
 <style scoped>
-.header {
+ @import "../../../static/css/theme-kezhan/color-title.css";   /*浅绿色主题*/
+.z_header {
   position: relative;
   box-sizing: border-box;
   width: 100%;

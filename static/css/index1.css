@@ -1,0 +1,172 @@
+/* 全局属性 */
+
+
+/* tab选项卡 */
+
+.el-tabs__item {
+    width: 90px;
+    height: 36px;
+    font-size: 12px;
+    color: #C1C1C1;
+    border: transparent;
+    border-radius: 5px;
+    /* background: #3E3731; */
+    margin-left: 8px;
+}
+
+.el-tabs__item:hover {
+    color: #C1C1C1;
+    background: #4C443C;
+}
+
+.el-tabs__item.is-active {
+    color: #C1C1C1;
+}
+
+.el-tabs--card>.el-tabs__header {
+    border: transparent;
+}
+
+.el-tabs--card>.el-tabs__header .el-tabs__nav {
+    border: transparent;
+}
+
+.el-tabs--card>.el-tabs__header .el-tabs__item.is-active {
+    border: transparent;
+}
+
+.el-tabs--card>.el-tabs__header .el-tabs__item {
+    border: transparent;
+}
+
+
+/* 走马灯 */
+
+.el-carousel__item h3 {
+    color: #475669;
+    font-size: 18px;
+    opacity: 0.75;
+    line-height: 300px;
+    margin: 0;
+}
+
+.el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n+1) {
+    background-color: #d3dce6;
+}
+
+.el-carousel__arrow--left {
+    width: 59px;
+    height: 59px;
+    background: rgba(0, 0, 0, .5);
+}
+
+.el-carousel__arrow--right {
+    width: 59px;
+    height: 59px;
+    background: rgba(0, 0, 0, .5);
+}
+
+.el-icon-arrow-left {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.el-icon-arrow-right {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.el-carousel__indicators--horizontal {
+    bottom: 25%;
+    left: 12%;
+}
+
+.el-carousel__button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+
+/* place-icon */
+
+.el-icon-location-outline {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 64px;
+    color: #BDBDBD;
+}
+
+
+/* number */
+
+.icon-ren111 {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 64px;
+    color: #BDBDBD;
+}
+
+.el-icon-arrow-down {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 64px;
+    text-indent: 5px;
+    color: #BDBDBD;
+}
+
+.el-icon-date {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 64px;
+    text-indent: 20px;
+    color: #BDBDBD;
+}
+
+
+/* 导航栏 */
+
+.el-icon-arrow-down {
+    display: none;
+}
+
+.el-menu.el-menu--horizontal {
+    border: transparent;
+}
+
+.el-menu-demo {
+    color: #fff;
+    height: 76px;
+    background: transparent;
+}
+
+.el-submenu__title {
+    color: #fff;
+    line-height: 60px;
+    font-weight: 600;
+    padding: 0px 15px;
+}
+
+.el-menu-item {
+    color: #fff;
+    font-weight: 600;
+}
+
+.submenu__title:hover {
+    color: #fff;
+    background-color: transparent;
+}
+
+.el-menu-item:hover {
+    color: #fff;
+    background-color: transparent;
+}
+
+
+/* .is-active:hover {
+    background-color: transparent;
+} */

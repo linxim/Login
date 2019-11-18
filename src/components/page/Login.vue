@@ -56,13 +56,14 @@ export default {
   name: "login",
   data() {
     return {
+      showname:true,
       identifyCodes: "1234567890",
       identifyCode: "",
       errorInfo: false,
       ruleForm: {
         name: "",
         password: "",
-        validate: ""
+        validate: "",
       },
       rules: {
         name: [{ required: true, message: "请输入用户名", trigger: "blur" }],
@@ -94,14 +95,15 @@ export default {
                 self.errorInfo = true;
                 self.errInfo = "密码错误";
               } else if (response.status == 200) {
-                self.$router.push("/brief");
+                self.$router.push("/index");
                 //保持登录状态,刷新页面也不会改变
                 sessionStorage.setItem("ms_username", self.ruleForm.name);
                 sessionStorage.setItem(
                   "ms_user",
                   JSON.stringify(self.ruleForm)
                 );
-                console.log(JSON.stringify(self.ruleForm));
+                sessionStorage.setItem('ms_show',self.showname);
+
               }
             })
             .then(error => {
@@ -161,7 +163,11 @@ export default {
                 self.errorInfo = true;
                 self.errInfo = "密码错误";
               } else if (response.status == 200) {
-                self.$router.push("/brief");
+                self.$router.push({
+                  path:'/index',
+                  name:'index',
+                 
+                });
               }
             })
             .then(error => {
@@ -180,7 +186,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
+ @import "../../../static/css/theme-kezhan/color-title.css";   /*浅绿色主题*/
 .login-wrap {
   position: relative;
   width: 100%;
@@ -206,9 +213,9 @@ export default {
   border-radius: 5px;
   background: #fff;
 }
-.ms-login span {
+/* .ms-login span {
   color: red;
-}
+} */
 .login-btn {
   text-align: center;
 }
