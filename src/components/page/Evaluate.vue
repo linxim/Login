@@ -9,7 +9,7 @@
             type="textarea"
             :autosize="{minRows:2,maxRows:4}"
             placeholder="请输入内容"
-            v-model="content"
+            v-model="form.content"
             class="z-pinglun"
           ></el-input>
           <!-- <input type="text" class="z-pinglun" placeholder="请输入内容" v-model="content" /> -->
@@ -28,7 +28,7 @@
             </div>
             <div class="appraise-title">
               发表时间
-              <span>{{item2.currentTime}}</span>
+              <span>{{item2.date}}</span>
             </div>
 
             <div class="appraise-body">
@@ -36,7 +36,7 @@
             </div>
           </div>
           <div>
-            <el-button type="danger" circle @click="del(index2)">删除</el-button>
+            <el-button type="danger" circle @click="del(item2.content)">删除</el-button>
           </div>
         </div>
         <br />
@@ -54,18 +54,15 @@ export default {
 
     return {
       // 将日期和内容添加到数据库
-      ruleForm: {
-        nowtime: "11",
-        u_content: "11"
+      form: {
+        content: "",
+        date:''
       },
-      rules: {
-        name: [{ validator: validateDate }]
-      },
-      timer:"",
+      timer: "",
       timer1: [],
-      content: "",
       currentTime: new Date(), //获取当前时间
-      listData: [{ content: ""}],
+      // listData: [{ content: "" }],
+      listData:[],
       show: false,
       mount: 1,
       activeName: "first"
@@ -79,18 +76,26 @@ export default {
   },
   methods: {
     handleClose(done) {
-
       this.timer1.push(this.currentTime);
       var obj = { content: "" };
-      obj.content = this.content;
+      obj.content = this.form.content;
       obj.name = this.name;
       obj.currentTime = this.currentTime;
-
-      console.log(this.currentTime,this.listData)
+      let self=this;
+      console.log(this.currentTime, this.listData);
+      this.form.date=this.currentTime;
+      this.$http
+        .post("/api/user/addComment", self.form)
+        .then(function(response) {
+          console.log(response);
+        })
+        .then(function(error) {
+          console.log(error);
+        });
       //this.currentTime 当前时间
-      this.listData.push(obj);
-      sessionStorage.setItem("article", JSON.stringify(this.listData));
-      sessionStorage.setItem("time-select", this.timer1.join());
+      // this.listData.push(obj);
+      // sessionStorage.setItem("article", JSON.stringify(this.listData));
+      // sessionStorage.setItem("time-select", this.timer1.join());
       this.$confirm("感谢提交,您的鼓励会让我们做得更好")
         .then(_ => {
           done();
@@ -98,23 +103,36 @@ export default {
         .catch(_ => {});
     },
     list: function() {
-     
-      var obj = sessionStorage.getItem("article");
-      let obj2 = sessionStorage.getItem("time-select");
-      if (obj) {
-        this.listData = JSON.parse(obj);
-      }
-      if (obj2) {
-        this.timer1 = obj2.split(",");
-      }
+      // var obj = sessionStorage.getItem("article");
+      // let obj2 = sessionStorage.getItem("time-select");
+      // if (obj) {
+      //   this.listData = JSON.parse(obj);
+      // }
+      // if (obj2) {
+      //   this.timer1 = obj2.split(",");
+      // }
     },
-    del(index2) {
-      this.listData.splice(index2, 1);
-      sessionStorage.setItem("article", JSON.stringify(this.listData));
+    del(index2){
+      // this.listData.splice(index2, 1);
+      // const lthis=this;
+      // this.$http.get('/api/user/delComment').then(response=>{
+      //   lthis.listData.splice(index2,1);
+      // })
+
+
+    },
+    getComment1(){
+      const lthis=this;
+      this.$http.get('/api/user/getComment').then(response=>{
+        console.log(response);
+        lthis.listData=response.data;
+        console.log(lthis.listData);
+      })
     }
   },
   mounted() {
-    this.list();
+    // this.list();
+    this.getComment1();
   },
   created() {
     this.timer = setInterval(() => {
@@ -134,7 +152,6 @@ export default {
   },
   beforeDestroy() {
     if (this.timer) {
-
       clearInterval(this.timer);
     }
   }

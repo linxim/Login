@@ -2,7 +2,7 @@
   <div class="z_header">
     <!-- <div class="logo">  </div> -->
     <div class="logo">
-      <i class="web-font">忆家客栈</i>
+      <router-link to="/index"><i class="web-font">忆家客栈</i></router-link>
     </div>
     <div class="user-info">
       <el-dropdown trigger="click" @command="handleCommand">

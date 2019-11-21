@@ -22,7 +22,9 @@ var sqlMap = {
         select_name:'select * from ant'
     },
     comment:{
-        add: 'insert into comment(content,date) values (?,?)',
+        add: 'insert into comment (content,date) values (?,?)',
+        select_comment:'select * from comment',
+        delete_comment:'delete from comment'
     }
 
 }

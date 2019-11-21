@@ -1,7 +1,5 @@
 <template>
   <div class="login-wrap">
-    
-    
     <div class="ms-title">个人管理中心</div>
     <div class="ms-login">
       <el-form
